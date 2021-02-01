@@ -1,23 +1,37 @@
-h1 {
-
-}
+.title{
+	display: flex;
+	justify-content:space-between;
+	align-items: center;
+	margin: 0;
+    padding: 0;
+	}
+	
+body.lite {
+	transition-duration: 1s;
+	}
+body.dark {
+	transition-duration: 1s;
+	background-color: rgb(48, 46, 46);
+	}
+body.dark h1{
+	color: white;
+	}
+body.dark label{
+	color: white;
+	}
 #minusButton {
 	width: 100px;
 	font-size: 30px;
-}
+	}
 #plusButton {
+	width: 100px;
+	font-size: 30px;
+	}
+#multiplyButton {
 	width: 100px;
 	font-size: 30px;
 }
 .row {
 	height: 300px;
 	width: 400px;
-
-	border: 2px solid red;
-}
- {
-
-}
-/* .block {
-	background:black;
-} */
+	}
