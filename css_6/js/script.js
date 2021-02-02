@@ -4,6 +4,7 @@ const plusadd = document.getElementById('minusButton')
 const minus = document.getElementById('plusButton')
 const multiplyAdd = document.getElementById('multiplyButton')
 const divisionAdd = document.getElementById('division')
+const checkButton =  document.getElementsByTagName('button')
 const add = document.querySelector('p')
 
 
@@ -43,53 +44,46 @@ function check() {
 function changeDisplay() {
 	blockInline.style.display = 'block';
 }
+function checkInput() {
+	const num1 = +number1.value
+	const num2 = +number2.value
+	return [num1,num2]
+}
 
 // addition
 function calcPlus() {
-	let num1 = number1.value
-	let num2 = number2.value
-	let result = (Number(num1) + Number(num2))
-	add.innerHTML = result;
-	changeDisplay()
+	const num = checkInput()
+	let result = num[0] + num[1]
+	add.innerHTML = result
+	changeDisplay()	
 }
 
 // subtraction
 function calcMinus() {
-	let num1 = number1.value
-	let num2 = number2.value
-	let result = Number(num1) - Number(num2);
+	const num = checkInput()
+	let result = num[0] - num[1];
+	add.innerHTML = result
+	changeDisplay()
+}
+function division() {
+	const num = checkInput()
+	let result = num[0] / num[1];
+	add.innerHTML = result
+	changeDisplay()
+}
+function multiply() {
+	const num = checkInput()
+	let result = num[0] * num[1];
 	add.innerHTML = result
 	changeDisplay()
 }
 
-function multiply () {
-	let num1 = number1.value
-	let num2 = number2.value
 
-	switch (+num1) {
-		case result = Number(num1) * Number(num2):
-			add.innerHTML = result
-			changeDisplay()
-		break;			
-	}
-}
-function calcdivision () {
-	let num1 = number1.value
-	let num2 = number2.value
-
-	switch (+num1) {
-		case result = Number(num1) / Number(num2):
-			add.innerHTML = result
-			changeDisplay()
-		break;			
-	}
-}
-
-
-
-division.addEventListener('click',calcdivision)
+divisionAdd.addEventListener('click',division)
 multiplyButton.addEventListener('click',multiply)
 plusButton.addEventListener('click', calcPlus)
 minusButton.addEventListener('click', calcMinus)
 plusButton.addEventListener('click', check)
 minusButton.addEventListener('click', check)
+divisionAdd.addEventListener('click', check)
+multiplyButton.addEventListener('click', check)
